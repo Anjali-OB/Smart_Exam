@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: #f1f5f9; }
+  ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 99px; }
+  ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+}
+
+@layer components {
+  /* ── Buttons ── */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-600
+           text-white font-semibold text-sm shadow-md shadow-brand-200
+           hover:bg-brand-700 active:scale-[.98] transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border-2 border-brand-200
+           text-brand-700 font-semibold text-sm hover:bg-brand-50
+           active:scale-[.98] transition-all duration-150;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-xl text-slate-600 font-medium text-sm
+           hover:bg-slate-100 active:scale-[.98] transition-all duration-150;
+  }
+  .btn-danger {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-red-600
+           text-white font-semibold text-sm hover:bg-red-700
+           active:scale-[.98] transition-all duration-150;
+  }
+  .btn-success {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600
+           text-white font-semibold text-sm shadow-md shadow-emerald-100
+           hover:bg-emerald-700 active:scale-[.98] transition-all duration-150;
+  }
+
+  /* ── Cards ── */
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-slate-100 p-6;
+  }
+  .card-hover {
+    @apply card hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 cursor-pointer;
+  }
+
+  /* ── Inputs ── */
+  .input {
+    @apply w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800
+           text-sm placeholder:text-slate-400 outline-none transition-all duration-150
+           focus:border-brand-400 focus:ring-2 focus:ring-brand-100;
+  }
+  .label {
+    @apply block text-sm font-semibold text-slate-700 mb-1.5;
+  }
+
+  /* ── Badges ── */
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold;
+  }
+  .badge-blue    { @apply badge bg-blue-100 text-blue-700; }
+  .badge-green   { @apply badge bg-emerald-100 text-emerald-700; }
+  .badge-amber   { @apply badge bg-amber-100 text-amber-700; }
+  .badge-red     { @apply badge bg-red-100 text-red-700; }
+  .badge-purple  { @apply badge bg-purple-100 text-purple-700; }
+  .badge-slate   { @apply badge bg-slate-100 text-slate-600; }
+
+  /* ── Stat cards ── */
+  .stat-card {
+    @apply card flex items-center gap-4;
+  }
+  .stat-icon {
+    @apply w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0;
+  }
+
+  /* ── Section titles ── */
+  .section-title {
+    @apply text-lg font-bold text-slate-800 mb-4;
+  }
+  .page-title {
+    @apply text-2xl font-bold text-slate-900;
+  }
+
+  /* ── Gradient text ── */
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-600 to-purple-600 bg-clip-text text-transparent;
+  }
+}
+
+/* ── Animations ── */
+.animate-fade-in  { animation: fadeIn .35s ease-out; }
+.animate-slide-up { animation: slideUp .4s ease-out; }
+
+@keyframes fadeIn  { from { opacity:0 } to { opacity:1 } }
+@keyframes slideUp { from { opacity:0; transform:translateY(18px) } to { opacity:1; transform:translateY(0) } }
+
+/* ── Timer pulse ── */
+.timer-warning { animation: timerPulse 1s ease-in-out infinite; }
+@keyframes timerPulse { 0%,100% { color:#ef4444 } 50% { color:#fca5a5 } }
+
+/* ── Option states ── */
+.option-default {
+  @apply flex items-start gap-3 p-4 rounded-xl border-2 border-slate-200
+         bg-white cursor-pointer hover:border-brand-300 hover:bg-brand-50/40
+         transition-all duration-150;
+}
+.option-selected {
+  @apply flex items-start gap-3 p-4 rounded-xl border-2 border-brand-500
+         bg-brand-50 cursor-pointer transition-all duration-150;
+}
+.option-correct {
+  @apply flex items-start gap-3 p-4 rounded-xl border-2 border-emerald-500
+         bg-emerald-50 transition-all duration-150;
+}
+.option-wrong {
+  @apply flex items-start gap-3 p-4 rounded-xl border-2 border-red-400
+         bg-red-50 transition-all duration-150;
+}
+
+/* ── Progress bar ── */
+.progress-bar {
+  @apply h-2 rounded-full bg-slate-100 overflow-hidden;
+}
+.progress-fill {
+  @apply h-full rounded-full bg-gradient-to-r from-brand-500 to-purple-500 transition-all duration-500;
+}
