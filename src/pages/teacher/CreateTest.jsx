@@ -60,7 +60,7 @@ export default function CreateTest() {
   const [aiLoading, setAiLoading] = useState(false)
   const [aiForm,    setAiForm]    = useState({
     topic:'', subject:'', difficulty:'medium',
-    typeCounts:{ mcq:4, truefalse:2, short:2, long:0 }
+    typeCounts:{ mcq:15, truefalse:5, short:2, long:0 }
   })
 
   // File import modal state

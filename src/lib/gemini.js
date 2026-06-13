@@ -2,7 +2,7 @@
 // Get free key at: https://console.groq.com
 const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || ''
 const BASE    = 'https://api.groq.com/openai/v1/chat/completions'
-const MODEL   = 'llama-3.3-70b-versatile'
+const MODEL   = 'llama-3.1-8b-instant'
 
 async function ask(prompt) {
   if (!API_KEY) throw new Error('API key not set. Add VITE_GEMINI_API_KEY to your .env file.')
@@ -15,8 +15,8 @@ async function ask(prompt) {
     body: JSON.stringify({
       model:       MODEL,
       messages:    [{ role: 'user', content: prompt }],
-      temperature: 0.7,
-      max_tokens:  4096,
+      temperature: 0.3,
+      max_tokens:  8192,
     }),
   })
   if (!res.ok) throw new Error(`API error: ${res.status} — ${res.statusText}`)
