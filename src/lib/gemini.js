@@ -16,7 +16,7 @@ async function ask(prompt) {
       model:       MODEL,
       messages:    [{ role: 'user', content: prompt }],
       temperature: 0.7,
-      max_tokens:  2048,
+      max_tokens:  4096,
     }),
   })
   if (!res.ok) throw new Error(`API error: ${res.status} — ${res.statusText}`)
