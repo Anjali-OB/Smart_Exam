@@ -4,7 +4,7 @@ import { supabase } from '../../lib/supabase'
 import { useToast, ToastContainer, Spinner } from '../../components/UI'
 import { exportSubmissionsToExcel, gradeFor, remarksFor, formatTime } from '../../utils/excel'
 import { downloadClassReportPDF } from '../../utils/pdf'
-import { analyseClassPerformance, detectWeakTopics } from '../../lib/gemini'
+import { analyseClassPerformance, detectWeakTopics } from '../../lib/groq'
 import {
   ArrowLeft, Download, RefreshCw, Brain,
   Users, TrendingUp, Award, BarChart2,

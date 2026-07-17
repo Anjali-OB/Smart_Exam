@@ -4,7 +4,7 @@ import { supabase } from '../../lib/supabase'
 import { useAuth } from '../../context/AuthContext'
 import { gradeFor, remarksFor } from '../../utils/excel'
 import { ConfirmDialog, Spinner } from '../../components/UI'
-import { getSmartHint } from '../../lib/gemini'
+import { getSmartHint } from '../../lib/groq'
 import {
   Clock, AlertTriangle, ChevronLeft, ChevronRight,
   CheckCircle, Flag, Send, Maximize, Minimize, Lightbulb, X
@@ -143,7 +143,7 @@ export default function TakeTest() {
     try {
       const h = await getSmartHint({ question: q.question_text, options: q.options?.map(o => o.option_text) })
       setHint(h)
-    } catch { setHint('Hint unavailable. Check Gemini/Groq API key.') }
+    } catch { setHint('Hint unavailable. Check Groq API key.') }
     setHintLoad(false)
   }
 

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { supabase } from '../../lib/supabase'
 import { useAuth } from '../../context/AuthContext'
 import { useToast, ToastContainer, Modal, ConfirmDialog, Spinner } from '../../components/UI'
-import { generateQuestions } from '../../lib/gemini'
+import { generateQuestions } from '../../lib/groq'
 import { BookMarked, Plus, Trash2, Filter, Sparkles } from 'lucide-react'
 
 export default function QuestionBank() {

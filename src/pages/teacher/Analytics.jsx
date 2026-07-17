@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '../../lib/supabase'
 import { useAuth } from '../../context/AuthContext'
-import { generateClassReport, detectWeakTopics, predictPerformance } from '../../lib/gemini'
+import { generateClassReport, detectWeakTopics, predictPerformance } from '../../lib/groq'
 import { exportSubmissionsToExcel, gradeFor } from '../../utils/excel'
 import { downloadClassReportPDF } from '../../utils/pdf'
 import { useToast, ToastContainer, Spinner } from '../../components/UI'
@@ -59,7 +59,7 @@ export default function Analytics() {
       })
       setAiReport(report)
       toast.success('AI report generated!')
-    } catch(err) { toast.error(err.message||'AI failed. Check Gemini key.') }
+    } catch(err) { toast.error(err.message||'AI failed. Check Groq key.') }
     setAiLoading(false)
   }
 

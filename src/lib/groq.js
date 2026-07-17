@@ -1,11 +1,11 @@
 // ── API Config — using Groq (free, fast, no limits) ──────────
 // Get free key at: https://console.groq.com
-const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || ''
+const API_KEY = import.meta.env.VITE_GROQ_API_KEY || ''
 const BASE    = 'https://api.groq.com/openai/v1/chat/completions'
 const MODEL   = 'llama-3.1-8b-instant'
 
 async function ask(prompt) {
-  if (!API_KEY) throw new Error('API key not set. Add VITE_GEMINI_API_KEY to your .env file.')
+  if (!API_KEY) throw new Error('API key not set. Add VITE_GROQ_API_KEY to your .env file.')
   const res = await fetch(BASE, {
     method: 'POST',
     headers: {

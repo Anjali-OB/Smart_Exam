@@ -15,7 +15,7 @@ const features = [
 
 const stats = [
   { value: 'Free', label: 'Forever', sub: 'No credit card needed' },
-  { value: 'AI',   label: 'Powered',  sub: 'By Google Gemini' },
+  { value: 'AI',   label: 'Powered',  sub: 'By Groq AI' },
   { value: '∞',    label: 'Students', sub: 'No limits' },
   { value: '4+',   label: 'Question Types', sub: 'MCQ, T/F, Short, Long' },
 ]

@@ -8,7 +8,7 @@ import {
   CheckCircle, ArrowLeft, Save, Eye
 } from 'lucide-react'
 import { extractTextFromFile } from '../../utils/fileExtract'
-import { generateQuestions, checkQuestionQuality, extractQuestionsFromDocument } from '../../lib/gemini'
+import { generateQuestions, checkQuestionQuality, extractQuestionsFromDocument } from '../../lib/groq'
 
 const QUESTION_TYPES = [
   { value:'mcq',       label:'Multiple Choice (MCQ)' },
